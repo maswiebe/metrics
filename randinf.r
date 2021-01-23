@@ -424,22 +424,6 @@ ggplot(df_trend,aes(trendgrid)) +
   scale_y_continuous(breaks=seq(0,1,0.25),limits=c(0,1)) +
   scale_x_continuous(breaks=seq(0,0.1,0.02),limits=c(0,0.1))
 
-ptest <- function(n,bvar) {
-  # x <- rnorm(n)
-  x <- rbernoulli(n,p=0.5)
-  e <- rnorm(n)
-  b <- rlnorm(n,0,bvar)
-  y <- b*x + e
-  model <-summary(lm(y~x)) 
-  p1 <- model$coefficients[2,4]
-  t <- model$coefficients[2,3]
-  simri <- replicate(n=ri_sims,raninf(x,y))
-  p2 <- sum(abs(simri[3,])>abs(t))/ri_sims
-  diff <- abs(p1-p2)
-  print(diff)
-  return(diff)
-}
-
 #---------------------------------
 #---------------------------------
 #---------------------------------
