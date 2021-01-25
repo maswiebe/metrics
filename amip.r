@@ -11,7 +11,8 @@ library(devtools)
 library(latex2exp)
 library(lfe)
 
-# installation:
+# installation: https://github.com/rgiordan/zaminfluence
+
 # repo_loc <- Sys.getenv("/home/michael/Documents/git_repos/zaminfluence") 
 # # Or just set to the correct directory path
 # devtools::document(file.path("/home/michael/Documents/git_repos/zaminfluence", "zaminfluence"))
